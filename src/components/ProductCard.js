@@ -14,7 +14,7 @@ export default function ProductCard({ product, compact = false }) {
   return (
     <Link
       href={`/shop/${product.slug}`}
-      className="product-card group block rounded-[28px] bg-paper border border-sand p-3 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(31,58,43,0.45)] hover:border-gold/50"
+      className="product-card group block rounded-[28px] bg-paper border border-sand p-3 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(163,71,13,0.4)] hover:border-gold/50"
     >
       {/* Image */}
       <div
@@ -63,7 +63,7 @@ export default function ProductCard({ product, compact = false }) {
         <div className="mt-4 flex items-end justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-bark/50">{multi ? "From" : "Price"}</p>
-            <p className="font-display text-2xl text-forest">€{from.toFixed(2)}</p>
+            <p className="font-display text-2xl text-forest">${from.toFixed(2)}</p>
           </div>
           {multi && (
             <span className="text-[11px] text-bark/60 border border-sand rounded-full px-2.5 py-1">

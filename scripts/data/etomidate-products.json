@@ -1,0 +1,294 @@
+[
+    {
+        "slug":  "etomidate-vape-kpod-classic",
+        "name":  "Etomidate Vape K-Pod Classic",
+        "price":  160,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "The original K-Pod featuring our signature etomidate formulation in a sleek, portable design.",
+        "description":  "The Classic K-Pod represents the foundation of our vape lineup. Each pod contains pharmaceutical-grade etomidate formulated specifically for vaporization, delivering consistent potency with every use.\n\nEngineered with medical-grade materials and precision manufacturing, the Classic K-Pod offers reliable performance and exceptional purity. The compact design makes it perfect for discreet use while maintaining the highest standards of quality.\n\nCompatible with all standard K-Pod devices. Each pod is individually sealed to preserve freshness and potency until ready for use.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: Pre-filled vape cartridge (K-Pod)",
+                               "Compatibility: Universal K-Pod devices",
+                               "Capacity: 1.0ml per pod",
+                               "Material: Medical-grade stainless steel and glass",
+                               "Leak-resistant design",
+                               "Batch-coded for traceability"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods.jpeg"
+    },
+    {
+        "slug":  "etomidate-vape-kpod-strong",
+        "name":  "Etomidate Vape K-Pod Strong",
+        "price":  160,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Enhanced potency K-Pod for experienced users seeking stronger effects.",
+        "description":  "The Strong K-Pod delivers enhanced potency for those who require a more pronounced experience. Formulated with a higher concentration of pharmaceutical-grade etomidate while maintaining the same purity standards.\n\nEach pod undergoes additional quality control testing to ensure consistent dosing and reliable performance. The advanced ceramic coil technology provides smooth vapor production without compromising the integrity of the active compounds.\n\nRecommended for experienced users who are familiar with etomidate effects and require stronger therapeutic outcomes.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: Enhanced pre-filled vape cartridge",
+                               "Potency: 2x concentration (Classic formula)",
+                               "Compatibility: Universal K-Pod devices",
+                               "Capacity: 1.0ml per pod",
+                               "Advanced ceramic coil technology",
+                               "Enhanced quality control testing"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods1.jpeg"
+    },
+    {
+        "slug":  "etomidate-vape-disposable-mini",
+        "name":  "Etomidate Vape Disposable Mini",
+        "price":  160,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Single-use disposable vape pen with pre-filled etomidate, perfect for travel and convenience.",
+        "description":  "The Disposable Mini offers ultimate convenience in a ready-to-use format. No charging, no refilling, no maintenance — simply use and dispose responsibly when finished.\n\nEach disposable unit contains the same pharmaceutical-grade etomidate as our K-Pods, sealed in a compact all-in-one device. The integrated battery is calibrated for optimal vaporization of our specific formulation.\n\nPerfect for travel, sampling, or situations where carrying a separate device is impractical. The discreet form factor and silent operation make it ideal for on-the-go use.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: All-in-one disposable vape pen",
+                               "Battery: Integrated, pre-charged",
+                               "Capacity: 0.5ml per unit",
+                               "Draw-activated (no buttons)",
+                               "No charging required",
+                               "Tamper-evident packaging"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "25 Units",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Units",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Units",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods2.jpeg"
+    },
+    {
+        "slug":  "etomidate-vape-kpod-menthol",
+        "name":  "Etomidate Vape K-Pod Menthol",
+        "price":  160,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Refreshing menthol-infused K-Pod with cooling sensation and smooth vapor.",
+        "description":  "The Menthol K-Pod combines our pharmaceutical-grade etomidate with premium menthol crystals for a refreshing, cooling experience. The menthol is carefully sourced and purified to pharmaceutical standards.\n\nThe formulation is balanced to ensure the menthol enhances rather than masks the etomidate\u0027s properties. Each puff delivers a crisp, clean sensation with smooth vapor production thanks to our advanced wicking system.\n\nPopular among users who prefer a cooling, minty experience. The menthol can also help soothe the throat during use.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Menthol: Pharmaceutical-grade, USP standard",
+                               "Form: Menthol-infused pre-filled cartridge",
+                               "Compatibility: Universal K-Pod devices",
+                               "Capacity: 1.0ml per pod",
+                               "Enhanced wicking system",
+                               "Cooling sensation profile"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods3.jpeg"
+    },
+    {
+        "slug":  "etomidate-vape-starter-kit",
+        "name":  "Etomidate Vape Starter Kit",
+        "price":  400,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Complete starter kit with premium device and sample K-Pods for new users.",
+        "description":  "The Starter Kit is the perfect introduction to our etomidate vape products. Each kit includes a premium rechargeable device and a selection of our most popular K-Pod varieties.\n\nThe included device features variable voltage settings, allowing you to customize your experience from smooth and subtle to more pronounced effects. The long-lasting battery provides all-day use on a single charge, with USB-C fast charging.\n\nAlso includes a carrying case, cleaning accessories, and detailed usage instructions. Everything you need to begin your journey with confidence and convenience.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Device: Premium rechargeable vape mod",
+                               "Battery: 1000mAh lithium-ion",
+                               "Charging: USB-C fast charge",
+                               "Settings: 3 voltage levels",
+                               "Kit Contents: Device + 5 mixed K-Pods + Case + Accessories",
+                               "Warranty: 90-day device warranty"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "1 Kit (with 25 Pods)",
+                          "price":  400
+                      },
+                      {
+                          "label":  "2 Kits (with 25 Pods each)",
+                          "price":  700
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods4.jpeg"
+    },
+    {
+        "slug":  "etomidate-vape-kpod-max",
+        "name":  "Etomidate Vape K-Pod Max",
+        "price":  160,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Maximum capacity K-Pod with extended usage and premium coil technology.",
+        "description":  "The Max K-Pod is designed for users who demand extended usage between replacements. With 2.0ml capacity — double the standard size — each pod provides twice the usage time while maintaining portability.\n\nFeatures our most advanced ceramic coil technology for optimal heat distribution and consistent vapor quality from first draw to last. The enlarged reservoir is made from upgraded borosilicate glass for superior chemical resistance.\n\nDespite the larger capacity, the Max maintains compatibility with all standard K-Pod devices. The extended capacity means fewer replacements and better value for regular users.",
+        "specifications":  [
+                               "CAS Number: 33125-97-2",
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: High-capacity pre-filled cartridge",
+                               "Capacity: 2.0ml per pod (2x standard)",
+                               "Compatibility: Universal K-Pod devices",
+                               "Coil: Advanced ceramic heating element",
+                               "Reservoir: Upgraded borosilicate glass",
+                               "Optimized for extended usage cycles"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/kpods5.jpeg"
+    },
+    {
+        "slug":  "zombie-vape",
+        "name":  "Zombie Vape",
+        "price":  70,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Zombie Vape — an intensely potent K-Pod formula built for those who push the limits. Bold, powerful, and relentlessly consistent.",
+        "description":  "Zombie Vape is not for the faint-hearted. This is our most bold and aggressively formulated K-Pod in the entire vape range — a pharmaceutical-grade etomidate vape cartridge engineered for users who demand maximum intensity from every draw.\n\nNamed for its signature knockout character, Zombie Vape delivers a deeply pronounced and immediately noticeable experience. The formulation uses a higher-load pharmaceutical-grade etomidate concentration housed in our premium ceramic coil K-Pod system, ensuring that each puff produces the same dense, consistent vapour with zero compromise on quality or potency.\n\nManufactured to the same strict GMP-aligned standards as all our products, Zombie Vape achieves ≥99.8% active compound purity confirmed by HPLC testing. The advanced ceramic coil technology ensures clean, even vaporisation without burning or degrading the active compounds, preserving full potency from the first draw through to the last.\n\nCompatible with all standard K-Pod devices. Each pod is individually sealed at point of manufacture to maintain freshness and prevent any potency loss before use. Available in packs of 10, 25, 50, and 100 pods to suit both personal use and larger research requirements. Discreet worldwide shipping within 24–48 hours.",
+        "specifications":  [
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: Pre-filled K-Pod vape cartridge",
+                               "Potency: High-load concentration formula",
+                               "Coil: Advanced ceramic heating element",
+                               "Capacity: 1.0ml per pod",
+                               "Compatibility: Universal K-Pod devices",
+                               "Individually sealed for freshness",
+                               "Batch-coded for full traceability"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "10 Pods",
+                          "price":  70
+                      },
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/etomidate/zombie-vape.jpg"
+    },
+    {
+        "slug":  "piao-piao-vape",
+        "name":  "Piao Piao Vape",
+        "price":  70,
+        "category":  "powder",
+        "strainType":  "etomidate",
+        "grade":  "",
+        "shortDescription":  "Piao Piao Vape — light, smooth, and effortlessly drifting. A gentle yet effective K-Pod for a relaxed, easygoing experience.",
+        "description":  "Piao Piao Vape takes its name from the sensation it delivers — light, smooth, and gently floating. In contrast to our heavier formulations, Piao Piao is crafted for users who prefer a softer, more relaxed experience without sacrificing the quality and purity that defines everything we produce.\n\nThe formulation uses pharmaceutical-grade etomidate at a carefully balanced concentration, designed to produce a smooth, manageable draw with gradual onset and comfortable duration. The result is a vaping experience that feels effortless — each puff light on the throat and easy on the senses, while still delivering consistent and reliable effects.\n\nHoused in our standard K-Pod ceramic coil cartridge system, Piao Piao Vape benefits from the same precision manufacturing and quality assurance that applies across our entire range. ≥99.8% active compound purity is confirmed via HPLC analysis for every batch, and each pod is hermetically sealed to preserve its character until the moment of use.\n\nIdeal for first-time users, those seeking a lighter daily-use option, or anyone who simply prefers to keep things smooth. Compatible with all standard K-Pod devices. Available in 10, 25, 50, and 100 pod packs. Ships discreetly worldwide within 24–48 hours.",
+        "specifications":  [
+                               "Purity: ≥99.8% (HPLC verified)",
+                               "Form: Pre-filled K-Pod vape cartridge",
+                               "Potency: Smooth, balanced light formula",
+                               "Coil: Advanced ceramic heating element",
+                               "Capacity: 1.0ml per pod",
+                               "Compatibility: Universal K-Pod devices",
+                               "Individually sealed for freshness",
+                               "Batch-coded for full traceability"
+                           ],
+        "sizes":  [
+                      {
+                          "label":  "10 Pods",
+                          "price":  70
+                      },
+                      {
+                          "label":  "25 Pods",
+                          "price":  160
+                      },
+                      {
+                          "label":  "50 Pods",
+                          "price":  300
+                      },
+                      {
+                          "label":  "100 Pods",
+                          "price":  550
+                      }
+                  ],
+        "inStock":  true,
+        "image":  "/uploads/etomidate/piao-piao-vape.jpg"
+    }
+]

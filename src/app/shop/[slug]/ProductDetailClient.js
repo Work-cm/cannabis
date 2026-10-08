@@ -101,11 +101,11 @@ export default function ProductDetailClient({ product }) {
             <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-forest">{product.name}</h1>
 
             {product.shortDescription && (
-              <p className="mt-4 font-display italic text-xl text-moss">{product.shortDescription}</p>
+              <p className="mt-4 font-display text-xl text-moss">{product.shortDescription}</p>
             )}
 
             <div className="mt-8 flex items-end gap-3">
-              <span className="font-display text-5xl text-forest">€{currentPrice.toFixed(2)}</span>
+              <span className="font-display text-5xl text-forest">${currentPrice.toFixed(2)}</span>
               {currentLabel && <span className="pb-2 text-sm text-bark/60">/ {currentLabel}</span>}
             </div>
 
@@ -122,7 +122,7 @@ export default function ProductDetailClient({ product }) {
                         onClick={() => setSelectedSize(i)}
                         className={`relative rounded-2xl border px-4 py-3 text-left transition-all ${
                           active
-                            ? "border-forest bg-forest text-cream shadow-[0_12px_30px_-15px_rgba(31,58,43,0.6)]"
+                            ? "border-forest bg-forest text-cream shadow-[0_12px_30px_-15px_rgba(163,71,13,0.55)]"
                             : "border-sand bg-paper text-forest hover:border-forest/40"
                         }`}
                       >
@@ -132,7 +132,7 @@ export default function ProductDetailClient({ product }) {
                           </span>
                         )}
                         <span className="block font-semibold">{size.label}</span>
-                        <span className={`block text-sm ${active ? "text-gold-soft" : "text-moss"}`}>€{size.price.toFixed(2)}</span>
+                        <span className={`block text-sm ${active ? "text-gold-soft" : "text-moss"}`}>${size.price.toFixed(2)}</span>
                       </button>
                     );
                   })}
@@ -146,7 +146,7 @@ export default function ProductDetailClient({ product }) {
                 href={`/order/${product.slug}${currentLabel ? `?size=${encodeURIComponent(currentLabel)}` : ""}`}
                 className="mt-8 group w-full flex items-center justify-center gap-3 rounded-full bg-forest hover:bg-moss text-cream font-semibold py-4 text-lg transition-colors"
               >
-                Order now — €{currentPrice.toFixed(2)}
+                Order now — ${currentPrice.toFixed(2)}
                 <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             ) : (

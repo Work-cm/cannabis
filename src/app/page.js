@@ -6,9 +6,9 @@ import HomePage from "@/components/HomePage";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "WeedLaps — Premium Cannabis Flower",
+  title: "CannabisLap — Premium Cannabis Flower",
   description:
-    "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
+    "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
   keywords: [
     "buy weed online",
     "cannabis for sale",
@@ -35,21 +35,21 @@ export const metadata = {
     "420 online shop",
   ],
   openGraph: {
-    title: "WeedLaps — Premium Cannabis Flower",
+    title: "CannabisLap — Premium Cannabis Flower",
     description:
-      "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
-    url: "https://weedlaps.com",
-    siteName: "WeedLaps.com",
+      "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
+    url: "https://cannabislap.com",
+    siteName: "CannabisLap.com",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WeedLaps — Premium Cannabis Flower",
+    title: "CannabisLap — Premium Cannabis Flower",
     description:
-      "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
+      "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
   },
   alternates: {
-    canonical: "https://weedlaps.com",
+    canonical: "https://cannabislap.com",
   },
   robots: {
     index: true,
@@ -64,7 +64,7 @@ export default async function Home() {
     const siteSettings = {
       announcement: "",
       heroSubtitle: "",
-      siteName: "WeedLaps",
+      siteName: "CannabisLap",
       tagline: "",
     };
     return <HomePage products={[]} siteSettings={siteSettings} />;
@@ -90,7 +90,7 @@ export default async function Home() {
   const siteSettings = {
     announcement: raw?.announcement || "",
     heroSubtitle: raw?.heroSubtitle || "",
-    siteName: raw?.siteName || "WeedLaps",
+    siteName: raw?.siteName || "CannabisLap",
     tagline: raw?.tagline || "",
   };
 

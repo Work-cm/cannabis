@@ -13,14 +13,14 @@ const links = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/19062613088",
+    href: "https://wa.me/14794800596",
     icon: <FaWhatsapp className="w-5 h-5" />,
     bg: "bg-forest text-cream",
     hover: "hover:bg-moss",
   },
   {
     label: "Email",
-    href: "mailto:orders@weedlaps.com",
+    href: "mailto:orders@cannabislap.com",
     icon: <FiMail className="w-5 h-5" />,
     bg: "bg-gold text-forest-deep",
     hover: "hover:bg-gold-soft",
@@ -36,7 +36,7 @@ export default function SocialFloat() {
       <button
         onClick={() => setOpen(!open)}
         aria-label={open ? "Close contact options" : "Open contact options"}
-        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-[0_12px_30px_-10px_rgba(21,40,30,0.6)] ring-4 ring-cream transition-all duration-300 ${
+        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-[0_12px_30px_-10px_rgba(135,58,8,0.55)] ring-4 ring-cream transition-all duration-300 ${
           open ? "bg-forest-deep text-gold-soft" : "bg-forest text-cream hover:bg-moss"
         }`}
       >

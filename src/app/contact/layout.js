@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Contact WeedLaps — Order Support & Bulk Inquiries | WeedLaps.com",
+  title: "Contact CannabisLap — Order Support & Bulk Inquiries | CannabisLap.com",
   description:
-    "Contact WeedLaps.com for orders, inquiries, or support. We respond within 24 hours. Reach us via email at orders@weedlaps.com for any questions about our cannabis products, shipping, or bulk orders.",
+    "Contact CannabisLap.com for orders, inquiries, or support. We respond within 24 hours. Reach us via email at orders@cannabislap.com for any questions about our cannabis products, shipping, or bulk orders.",
   keywords: [
     "contact cannabis supplier",
     "weed order support",
@@ -12,18 +12,18 @@ export const metadata = {
     "weed customer service",
     "cannabis order inquiry",
     "weed order help",
-    "WeedLaps contact",
-    "orders@weedlaps.com",
+    "CannabisLap contact",
+    "orders@cannabislap.com",
     "cannabis 24 hour support",
   ],
   openGraph: {
-    title: "Contact WeedLaps — Orders & Support",
+    title: "Contact CannabisLap — Orders & Support",
     description:
-      "Have questions? Contact us at orders@weedlaps.com for product inquiries, order support, or bulk pricing. We reply within 24 hours.",
-    url: "https://weedlaps.com/contact",
+      "Have questions? Contact us at orders@cannabislap.com for product inquiries, order support, or bulk pricing. We reply within 24 hours.",
+    url: "https://cannabislap.com/contact",
   },
   alternates: {
-    canonical: "https://weedlaps.com/contact",
+    canonical: "https://cannabislap.com/contact",
   },
 };
 

@@ -1,4 +1,4 @@
-import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -7,27 +7,22 @@ import ToastProvider from "@/components/ToastProvider";
 import SocialFloat from "@/components/SocialFloat";
 import ImageProtection from "@/components/ImageProtection";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal"],
   display: "swap",
 });
 
 export const metadata = {
-  metadataBase: new URL("https://weedlaps.com"),
+  metadataBase: new URL("https://cannabislap.com"),
   title: {
-    default: "WeedLaps — Premium Cannabis Flower | WeedLaps.com",
-    template: "%s | WeedLaps.com",
+    default: "CannabisLap — Premium Cannabis Flower | CannabisLap.com",
+    template: "%s | CannabisLap.com",
   },
   description:
-    "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
+    "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
   keywords: [
     "buy weed online",
     "cannabis for sale",
@@ -54,8 +49,8 @@ export const metadata = {
     "mail order marijuana",
     "online dispensary",
     "cannabis dispensary online",
-    "WeedLaps",
-    "weedlaps.com",
+    "CannabisLap",
+    "cannabislap.com",
     "weed strains",
     "high THC flower",
     "organic cannabis",
@@ -63,23 +58,23 @@ export const metadata = {
     "420 shop",
     "buy bud online",
   ],
-  authors: [{ name: "WeedLaps.com" }],
-  creator: "WeedLaps.com",
-  publisher: "WeedLaps.com",
+  authors: [{ name: "CannabisLap.com" }],
+  creator: "CannabisLap.com",
+  publisher: "CannabisLap.com",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://weedlaps.com",
-    siteName: "WeedLaps.com",
-    title: "WeedLaps — Premium Cannabis Flower",
+    url: "https://cannabislap.com",
+    siteName: "CannabisLap.com",
+    title: "CannabisLap — Premium Cannabis Flower",
     description:
-      "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
+      "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, independently lab tested and shipped discreetly worldwide.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WeedLaps — Premium Cannabis Flower",
+    title: "CannabisLap — Premium Cannabis Flower",
     description:
-      "WeedLaps.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
+      "CannabisLap.com — Premium cannabis flower. Indica, sativa & hybrid strains, lab tested and shipped discreetly worldwide.",
   },
   robots: {
     index: true,
@@ -93,7 +88,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "https://weedlaps.com",
+    canonical: "https://cannabislap.com",
   },
   icons: {
     icon: "/favicon.svg",
@@ -105,7 +100,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${poppins.variable} h-full antialiased`}
     >
       <head></head>
       <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
@@ -115,22 +110,17 @@ export default function RootLayout({ children }) {
         <main className="flex-1">{children}</main>
         <Footer />
         <SocialFloat />
-        <Script
-          id="smartsupp-chat"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _smartsupp = _smartsupp || {};
-              _smartsupp.key = 'e4d4e2532ee9248e27d26eacf7d350f3099e17af';
-              window.smartsupp||(function(d) {
-                var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-                s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-                c.type='text/javascript';c.charset='utf-8';c.async=true;
-                c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-              })(document);
-            `,
-          }}
-        />
+        <Script id="tawk-to" strategy="afterInteractive">{`
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ac8016c9d3e4a34c362bac6/1k4ekb628';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+`}</Script>
       </body>
     </html>
   );

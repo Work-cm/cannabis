@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Admin Dashboard — WeedLaps",
+  title: "Admin Dashboard — CannabisLap",
 };
 
 export default function AdminLayout({ children }) {

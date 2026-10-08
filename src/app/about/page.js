@@ -5,9 +5,9 @@ import AboutClient from "@/components/AboutClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "About WeedLaps — Trusted Cannabis Dispensary Since 2019 | WeedLaps.com",
+  title: "About CannabisLap — Trusted Cannabis Dispensary Since 2019 | CannabisLap.com",
   description:
-    "WeedLaps.com has been a trusted name in premium cannabis since 2019. Learn about our craft growers, rigorous lab testing, and commitment to top-shelf quality with every product.",
+    "CannabisLap.com has been a trusted name in premium cannabis since 2019. Learn about our craft growers, rigorous lab testing, and commitment to top-shelf quality with every product.",
   keywords: [
     "trusted cannabis supplier",
     "reliable weed vendor",
@@ -19,17 +19,17 @@ export const metadata = {
     "trusted online weed shop",
     "discreet cannabis supplier",
     "weed worldwide shipping",
-    "about WeedLaps",
-    "weedlaps.com review",
+    "about CannabisLap",
+    "cannabislap.com review",
   ],
   openGraph: {
-    title: "About WeedLaps — Quality & Trust Since 2019",
+    title: "About CannabisLap — Quality & Trust Since 2019",
     description:
-      "Craft-grown cannabis, lab-tested quality, discreet shipping with every order. Learn why customers worldwide trust WeedLaps.com.",
-    url: "https://weedlaps.com/about",
+      "Craft-grown cannabis, lab-tested quality, discreet shipping with every order. Learn why customers worldwide trust CannabisLap.com.",
+    url: "https://cannabislap.com/about",
   },
   alternates: {
-    canonical: "https://weedlaps.com/about",
+    canonical: "https://cannabislap.com/about",
   },
 };
 

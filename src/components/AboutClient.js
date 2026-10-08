@@ -19,7 +19,7 @@ const sections = [
   {
     icon: <CannabisIcon className="w-6 h-6" />,
     title: "Our Mission",
-    text: "Founded in 2019, WeedLaps emerged from a simple observation: cannabis consumers deserved a dispensary they could trust. We bridge the gap between craft growers and customers, ensuring access to premium, lab-tested cannabis products without the typical industry headaches.",
+    text: "Founded in 2019, CannabisLap emerged from a simple observation: cannabis consumers deserved a dispensary they could trust. We bridge the gap between craft growers and customers, ensuring access to premium, lab-tested cannabis products without the typical industry headaches.",
   },
   {
     icon: <HiOutlineShieldCheck className="w-6 h-6" />,
@@ -36,13 +36,6 @@ const sections = [
     title: "Experts Supporting Customers",
     text: "Our support team isn't outsourced to a call center. You'll speak directly with people who know cannabis inside and out. Need help picking the right strain? Advice on storage or grading? We're here to help, not just transact.",
   },
-];
-
-const stats = [
-  { value: "5+", label: "Years growing" },
-  { value: "20k+", label: "Happy customers" },
-  { value: "50+", label: "Countries served" },
-  { value: "4.9", label: "Average rating" },
 ];
 
 export default function AboutClient({ aboutText }) {
@@ -79,29 +72,9 @@ export default function AboutClient({ aboutText }) {
             <div className="relative arch forest-grain aspect-[4/5] flex items-center justify-center overflow-hidden">
               <div className="absolute w-[75%] aspect-square rounded-full border border-gold/25" />
               <CannabisIcon className="w-[60%] h-[60%] text-gold-soft animate-sway" />
-              <span className="absolute bottom-8 font-display italic text-2xl text-gold-soft">est. 2019</span>
+              <span className="absolute bottom-8 font-display text-2xl text-gold-soft">est. 2019</span>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-forest text-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i}
-              className="text-center"
-            >
-              <div className="font-display text-5xl text-gold-soft">{s.value}</div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-cream/60">{s.label}</div>
-            </motion.div>
-          ))}
         </div>
       </section>
 
@@ -119,7 +92,7 @@ export default function AboutClient({ aboutText }) {
               &ldquo;
             </span>
             <blockquote className="font-display text-2xl md:text-3xl leading-relaxed text-forest">{aboutText}</blockquote>
-            <figcaption className="mt-6 text-xs uppercase tracking-[0.25em] text-clay">The WeedLaps team</figcaption>
+            <figcaption className="mt-6 text-xs uppercase tracking-[0.25em] text-clay">The CannabisLap team</figcaption>
           </motion.figure>
         )}
 
@@ -144,7 +117,7 @@ export default function AboutClient({ aboutText }) {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               custom={i}
-              className="group relative overflow-hidden rounded-[28px] bg-paper border border-sand p-8 md:p-10 hover:border-gold/50 hover:shadow-[0_24px_50px_-28px_rgba(31,58,43,0.45)] transition-all duration-500"
+              className="group relative overflow-hidden rounded-[28px] bg-paper border border-sand p-8 md:p-10 hover:border-gold/50 hover:shadow-[0_24px_50px_-28px_rgba(163,71,13,0.4)] transition-all duration-500"
             >
               <div className="flex items-center justify-between">
                 <span className="w-14 h-14 blob-shape bg-sand text-moss flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">

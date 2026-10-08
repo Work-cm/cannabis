@@ -92,7 +92,7 @@ export default function ShopClient({ products }) {
       </section>
 
       {/* Filter bar */}
-      <div className="sticky top-[112px] z-30 bg-cream/90 backdrop-blur-md border-b border-sand">
+      <div className="sticky top-20 z-30 bg-cream/90 backdrop-blur-md border-b border-sand">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col lg:flex-row lg:items-center gap-4 justify-between">
           <div className="flex gap-2 overflow-x-auto -mx-1 px-1 pb-1 lg:pb-0">
             {["all", ...strains].map((strain) => {

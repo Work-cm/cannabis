@@ -14,7 +14,7 @@ const ProductSchema = new mongoose.Schema(
     name: { type: String, required: true },
     price: { type: Number, required: true },
     category: { type: String, enum: ["powder"], required: true, default: "powder" },
-    strainType: { type: String, enum: ["indica", "sativa", "hybrid", ""], default: "" },
+    strainType: { type: String, enum: ["indica", "sativa", "hybrid", "etomidate", "preroll", ""], default: "" },
     grade: { type: String, default: "" },
     shortDescription: { type: String, default: "" },
     description: { type: String, default: "" },

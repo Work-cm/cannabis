@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api
 
-Sitemap: https://weedlaps.com/sitemap.xml
+Sitemap: https://cannabislap.com/sitemap.xml

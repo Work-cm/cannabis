@@ -15,7 +15,7 @@ const labelCls = "block text-[11px] font-semibold text-bark/70 uppercase trackin
 const iconCls = "absolute left-4 top-4 w-4 h-4 text-bark/40";
 
 // WhatsApp business number and Telegram contact (digits only for wa.me)
-const WHATSAPP_NUMBER = "19062613088";
+const WHATSAPP_NUMBER = "14794800596";
 const TELEGRAM_URL = "https://t.me/+19102279379";
 
 export default function OrderPage() {
@@ -107,7 +107,7 @@ export default function OrderPage() {
 
   const currentPrice = product.sizes?.[selectedSize]?.price || product.price || 0;
 
-  const orderText = `Hi! I'd like to order:\n\n${product.name} — ${product.sizes?.[selectedSize]?.label || "Standard"}\nTotal: €${currentPrice.toFixed(2)}\n\nName:\nDelivery address:`;
+  const orderText = `Hi! I'd like to order:\n\n${product.name} — ${product.sizes?.[selectedSize]?.label || "Standard"}\nTotal: $${currentPrice.toFixed(2)}\n\nName:\nDelivery address:`;
 
   const chatChannel =
     method === "whatsapp"
@@ -131,7 +131,7 @@ export default function OrderPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="max-w-lg w-full text-center"
         >
-          <div className="relative overflow-hidden bg-paper border border-sand rounded-[36px] p-10 md:p-12 shadow-[0_30px_60px_-30px_rgba(31,58,43,0.35)]">
+          <div className="relative overflow-hidden bg-paper border border-sand rounded-[36px] p-10 md:p-12 shadow-[0_30px_60px_-30px_rgba(163,71,13,0.35)]">
             <CannabisIcon className="absolute -right-10 -top-10 w-40 h-40 text-moss/[0.06]" />
             <motion.div
               initial={{ scale: 0 }}
@@ -232,7 +232,7 @@ export default function OrderPage() {
                     <p className="mt-2 font-display text-xl text-forest">
                       {product.name} — {product.sizes?.[selectedSize]?.label || "Standard"}
                     </p>
-                    <p className="mt-1 text-sm font-semibold text-moss">€{currentPrice.toFixed(2)} · Bitcoin (BTC) only</p>
+                    <p className="mt-1 text-sm font-semibold text-moss">${currentPrice.toFixed(2)} · Bitcoin (BTC) only</p>
                   </div>
                   <p className="text-sm text-bark/70 leading-relaxed">
                     Send us a message on {chatChannel.name} with this product, your chosen amount and your delivery address — we'll confirm your order and send the Bitcoin payment details right away.
@@ -350,7 +350,7 @@ export default function OrderPage() {
                 className="mt-8 w-full flex items-center justify-center gap-2 rounded-full bg-forest hover:bg-moss disabled:opacity-60 text-cream font-semibold py-4 text-base transition-colors"
               >
                 {submitting ? <FiLoader className="w-5 h-5 animate-spin" /> : <FiLock className="w-4 h-4" />}
-                {submitting ? "Placing order..." : `Place order — €${currentPrice.toFixed(2)}`}
+                {submitting ? "Placing order..." : `Place order — $${currentPrice.toFixed(2)}`}
               </button>
               <div className="mt-5 flex items-start gap-3 rounded-2xl border border-gold/40 bg-gold-soft/20 px-4 py-3.5 text-left">
                 <FaBitcoin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -400,7 +400,7 @@ export default function OrderPage() {
                             }`}
                           >
                             <span className="block font-semibold">{size.label}</span>
-                            <span className={`block ${active ? "text-gold-soft" : "text-moss"}`}>€{size.price.toFixed(2)}</span>
+                            <span className={`block ${active ? "text-gold-soft" : "text-moss"}`}>${size.price.toFixed(2)}</span>
                           </button>
                         );
                       })}
@@ -419,7 +419,7 @@ export default function OrderPage() {
                   </div>
                   <div className="flex justify-between items-end pt-3 border-t border-sand">
                     <dt className="font-semibold text-forest">Total</dt>
-                    <dd className="font-display text-3xl text-forest">€{currentPrice.toFixed(2)}</dd>
+                    <dd className="font-display text-3xl text-forest">${currentPrice.toFixed(2)}</dd>
                   </div>
                 </dl>
               </div>

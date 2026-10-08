@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const SettingsSchema = new mongoose.Schema(
   {
     key: { type: String, default: "main", unique: true },
-    siteName: { type: String, default: "WeedLaps" },
+    siteName: { type: String, default: "CannabisLap" },
     tagline: { type: String, default: "Premium Cannabis Flower — Trusted Worldwide" },
     heroSubtitle: { type: String, default: "" },
     contactEmail: { type: String, default: "" },

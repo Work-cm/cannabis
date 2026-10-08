@@ -5,9 +5,9 @@ import ShopClient from "@/components/ShopClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Shop Cannabis Flower — Indica, Sativa & Hybrid | WeedLaps.com",
+  title: "Shop Cannabis Flower — Indica, Sativa & Hybrid | CannabisLap.com",
   description:
-    "Shop premium cannabis flower at WeedLaps.com. Top-shelf indica, sativa & hybrid strains. Independently lab tested. Discreet worldwide shipping.",
+    "Shop premium cannabis flower at CannabisLap.com. Top-shelf indica, sativa & hybrid strains. Independently lab tested. Discreet worldwide shipping.",
   keywords: [
     "buy cannabis flower",
     "weed flower for sale",
@@ -37,11 +37,11 @@ export const metadata = {
   openGraph: {
     title: "Shop Cannabis Flower — Indica, Sativa & Hybrid",
     description:
-      "WeedLaps.com — Buy premium cannabis flower. Indica, sativa & hybrid strains, lab tested. Discreet worldwide shipping.",
-    url: "https://weedlaps.com/shop",
+      "CannabisLap.com — Buy premium cannabis flower. Indica, sativa & hybrid strains, lab tested. Discreet worldwide shipping.",
+    url: "https://cannabislap.com/shop",
   },
   alternates: {
-    canonical: "https://weedlaps.com/shop",
+    canonical: "https://cannabislap.com/shop",
   },
 };
 

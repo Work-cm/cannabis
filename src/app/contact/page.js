@@ -60,9 +60,9 @@ export default function ContactPage() {
     {
       icon: <FiMail className="w-5 h-5" />,
       label: "Email us",
-      value: siteSettings.contactEmail || "orders@weedlaps.com",
+      value: siteSettings.contactEmail || "orders@cannabislap.com",
       desc: "Replies within 2 hours",
-      href: `mailto:${siteSettings.contactEmail || "orders@weedlaps.com"}`,
+      href: `mailto:${siteSettings.contactEmail || "orders@cannabislap.com"}`,
     },
     {
       icon: <FaTelegramPlane className="w-5 h-5" />,
@@ -74,9 +74,9 @@ export default function ContactPage() {
     {
       icon: <FaWhatsapp className="w-5 h-5" />,
       label: "WhatsApp",
-      value: "+1 (906) 261-3088",
+      value: "+1 (479) 480-0596",
       desc: "Chat with us directly",
-      href: "https://wa.me/19062613088",
+      href: "https://wa.me/14794800596",
     },
   ];
 
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
-                className="group flex items-center gap-4 rounded-[24px] bg-paper border border-sand p-5 hover:border-gold/60 hover:shadow-[0_20px_40px_-24px_rgba(31,58,43,0.45)] transition-all"
+                className="group flex items-center gap-4 rounded-[24px] bg-paper border border-sand p-5 hover:border-gold/60 hover:shadow-[0_20px_40px_-24px_rgba(163,71,13,0.4)] transition-all"
               >
                 <span className="w-12 h-12 rounded-full bg-forest text-gold-soft flex items-center justify-center shrink-0 group-hover:bg-moss transition-colors">
                   {card.icon}

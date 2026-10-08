@@ -1,27 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 48" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 48" fill="none">
   <defs>
-    <path id="leaflet" d="M0 0 C3.2 -5 3 -11 0 -17 C-3 -11 -3.2 -5 0 0 Z"/>
+    <linearGradient id="pillGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9d2e"/>
+      <stop offset="1" stop-color="#b4551b"/>
+    </linearGradient>
   </defs>
 
-  <!-- Badge -->
-  <circle cx="24" cy="24" r="22" fill="#1f3a2b"/>
-  <circle cx="24" cy="24" r="19" stroke="#c8a24a" stroke-opacity="0.55" stroke-width="0.8" stroke-dasharray="1.5 2.2"/>
+  <!-- Capsule mark (a "lap" track loop) -->
+  <rect x="2" y="10" width="60" height="28" rx="14" fill="url(#pillGrad)"/>
+  <rect x="6" y="14" width="52" height="20" rx="10" stroke="#fdf4ea" stroke-opacity="0.45" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
 
-  <!-- Cannabis leaf -->
-  <g transform="translate(24 31)" fill="#e6d3a3">
-    <use href="#leaflet" transform="scale(1.05 1.2)"/>
-    <use href="#leaflet" transform="rotate(-30) scale(0.95 1.02)"/>
-    <use href="#leaflet" transform="rotate(30) scale(0.95 1.02)"/>
-    <use href="#leaflet" transform="rotate(-62) scale(0.8 0.78)"/>
-    <use href="#leaflet" transform="rotate(62) scale(0.8 0.78)"/>
-    <use href="#leaflet" transform="rotate(-92) scale(0.6 0.5)"/>
-    <use href="#leaflet" transform="rotate(92) scale(0.6 0.5)"/>
-  </g>
-  <path d="M24 31 L24 38" stroke="#c8a24a" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="32" cy="24" r="7" fill="#fdf4ea" />
 
   <!-- Wordmark -->
-  <text x="56" y="29" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#1f3a2b" letter-spacing="-0.01em">Weed<tspan font-style="italic" fill="#3f6b4a">Laps</tspan></text>
-  <text x="57" y="42" font-family="Arial, Helvetica, sans-serif" font-size="7.2" font-weight="700" fill="#b9794f" letter-spacing="0.28em">CANNABIS CO. · EST 2019</text>
+  <text x="72" y="30" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#a3470d" letter-spacing="-0.02em">Cannabis<tspan fill="#ff9d2e">Lap</tspan></text>
+  <text x="73" y="41" font-family="Arial, Helvetica, sans-serif" font-size="6.5" font-weight="700" fill="#b4551b" letter-spacing="0.28em">PREMIUM CRAFT FLOWER · WORLDWIDE</text>
 </svg>
 
 

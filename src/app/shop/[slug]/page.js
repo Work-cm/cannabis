@@ -3,7 +3,7 @@ import dbConnect from "@/lib/mongodb";
 import Product from "@/models/Product";
 import ProductDetailClient from "./ProductDetailClient";
 
-const BASE_URL = "https://weedlaps.com";
+const BASE_URL = "https://cannabislap.com";
 
 async function getProduct(slug) {
   try {
@@ -22,16 +22,16 @@ export async function generateMetadata({ params }) {
 
   if (!product) {
     return {
-      title: "Product Not Found | WeedLaps.com",
+      title: "Product Not Found | CannabisLap.com",
       description: "The product you are looking for could not be found.",
     };
   }
 
   const priceFrom = product.sizes?.[0]?.price || product.price || 0;
-  const title = `${product.name} — Buy Online | WeedLaps.com`;
+  const title = `${product.name} — Buy Online | CannabisLap.com`;
   const description = product.shortDescription
-    ? `${product.shortDescription} From €${priceFrom}. Lab-tested quality. Discreet worldwide shipping.`
-    : `Buy ${product.name} online. Premium, lab-tested cannabis. From €${priceFrom}. Discreet worldwide shipping.`;
+    ? `${product.shortDescription} From $${priceFrom}. Lab-tested quality. Discreet worldwide shipping.`
+    : `Buy ${product.name} online. Premium, lab-tested cannabis. From $${priceFrom}. Discreet worldwide shipping.`;
 
   return {
     title,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: `${BASE_URL}/shop/${slug}`,
-      siteName: "WeedLaps.com",
+      siteName: "CannabisLap.com",
       type: "website",
     },
     alternates: {

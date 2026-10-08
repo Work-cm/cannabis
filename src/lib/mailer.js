@@ -25,22 +25,24 @@ function getTransporter() {
 }
 
 const adminEmail = () => process.env.ADMIN_EMAIL || process.env.GMAIL_USER;
-const fromAddress = () => `"WeedLaps" <${process.env.GMAIL_USER}>`;
+// Public business address — replies from customers land here.
+const businessEmail = () => process.env.BUSINESS_EMAIL || "orders@cannabislap.com";
+const fromAddress = () => `"CannabisLap" <${process.env.GMAIL_USER}>`;
 
 // Shared branded shell for all outgoing mail (table-safe inline styles).
 const emailShell = (title, subtitle, bodyHtml) => `
   <div style="font-family: Arial, Helvetica, sans-serif; background: #f6f1e7; padding: 32px 16px;">
-    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #e9dfcc;">
-      <div style="background: #1f3a2b; padding: 26px 32px;">
-        <p style="margin: 0; color: #c9a24b; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">WeedLaps</p>
-        <h1 style="margin: 6px 0 0; color: #f6f1e7; font-size: 22px; font-weight: bold;">${title}</h1>
-        ${subtitle ? `<p style="margin: 6px 0 0; color: rgba(246,241,231,0.7); font-size: 13px;">${subtitle}</p>` : ""}
+    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #f3e2cf;">
+      <div style="background: #a3470d; padding: 26px 32px;">
+        <p style="margin: 0; color: #fccb8e; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">CannabisLap</p>
+        <h1 style="margin: 6px 0 0; color: #fdf4ea; font-size: 22px; font-weight: bold;">${title}</h1>
+        ${subtitle ? `<p style="margin: 6px 0 0; color: rgba(253,244,234,0.7); font-size: 13px;">${subtitle}</p>` : ""}
       </div>
       <div style="padding: 26px 32px;">
         ${bodyHtml}
       </div>
-      <div style="background: #f6f1e7; border-top: 1px solid #e9dfcc; padding: 14px 32px;">
-        <p style="margin: 0; color: #8a7a5c; font-size: 11px; text-align: center;">weedlaps.com — premium cannabis flower</p>
+      <div style="background: #fdf4ea; border-top: 1px solid #f3e2cf; padding: 14px 32px;">
+        <p style="margin: 0; color: #9a6a45; font-size: 11px; text-align: center;">cannabislap.com — premium cannabis flower</p>
       </div>
     </div>
   </div>
@@ -48,7 +50,7 @@ const emailShell = (title, subtitle, bodyHtml) => `
 
 // Labelled field row used inside the shell.
 const field = (label, value) => `
-  <p style="color: #3f6b4a; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 18px 0 4px;">${label}</p>
+  <p style="color: #d15f0e; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 18px 0 4px;">${label}</p>
   <p style="color: #2b2b26; font-size: 15px; margin: 0;">${value}</p>
 `;
 
@@ -61,8 +63,8 @@ export async function sendContactNotification({ name, email, phone, subject, mes
     ${phone ? field("Phone", esc(phone)) : ""}
     ${field("Subject", esc(subject) || "General Inquiry")}
     ${field("Message", `<span style="white-space: pre-wrap;">${esc(message)}</span>`)}
-    <div style="margin-top: 24px; padding: 14px 18px; background: #f6f1e7; border-left: 3px solid #c9a24b; border-radius: 8px;">
-      <p style="margin: 0; color: #6b5d43; font-size: 12px;">Reply directly to this email to respond to ${esc(name)}.</p>
+    <div style="margin-top: 24px; padding: 14px 18px; background: #fdf4ea; border-left: 3px solid #ff9d2e; border-radius: 8px;">
+      <p style="margin: 0; color: #7c5230; font-size: 12px;">Reply directly to this email to respond to ${esc(name)}.</p>
     </div>
     `
   );
@@ -85,24 +87,24 @@ export async function sendContactNotification({ name, email, phone, subject, mes
 export async function sendOrderNotification(orderDoc) {
   const order = orderDoc?.toObject ? orderDoc.toObject() : orderDoc;
   const { orderId, productName, size, price, customerName, customerEmail, customerPhone, shippingAddress, message } = order;
-  const total = typeof price === "number" ? `€${price.toFixed(2)}` : `€${price}`;
+  const total = typeof price === "number" ? `$${price.toFixed(2)}` : `$${price}`;
 
   const html = emailShell(
     "New order received",
     `${orderId}`,
     `
-    <div style="background: #f6f1e7; border: 1px solid #e9dfcc; border-radius: 12px; padding: 16px 20px;">
-      <p style="color: #3f6b4a; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px;">Product</p>
+    <div style="background: #fdf4ea; border: 1px solid #f3e2cf; border-radius: 12px; padding: 16px 20px;">
+      <p style="color: #d15f0e; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px;">Product</p>
       <p style="color: #2b2b26; font-size: 15px; margin: 0;">${esc(productName)} — ${esc(size)}</p>
-      <p style="color: #1f3a2b; font-size: 26px; font-weight: bold; margin: 10px 0 0;">${total}</p>
+      <p style="color: #a3470d; font-size: 26px; font-weight: bold; margin: 10px 0 0;">${total}</p>
     </div>
     ${field("Customer", esc(customerName))}
     ${field("Email", esc(customerEmail))}
     ${customerPhone ? field("Phone / WhatsApp", esc(customerPhone)) : ""}
     ${field("Shipping address", esc(shippingAddress))}
     ${message ? field("Customer note", `<span style="white-space: pre-wrap;">${esc(message)}</span>`) : ""}
-    <div style="margin-top: 24px; padding: 14px 18px; background: #f6f1e7; border-left: 3px solid #c9a24b; border-radius: 8px;">
-      <p style="margin: 0; color: #6b5d43; font-size: 12px;">Reply directly to this email to reach the customer. Payment is Bitcoin (BTC) only.</p>
+    <div style="margin-top: 24px; padding: 14px 18px; background: #fdf4ea; border-left: 3px solid #ff9d2e; border-radius: 8px;">
+      <p style="margin: 0; color: #7c5230; font-size: 12px;">Reply directly to this email to reach the customer. Payment is Bitcoin (BTC) only.</p>
     </div>
     `
   );
@@ -112,7 +114,7 @@ export async function sendOrderNotification(orderDoc) {
       from: fromAddress(),
       to: adminEmail(),
       replyTo: customerEmail,
-      subject: `New Order ${orderId} — ${productName} (€${typeof price === 'number' ? price.toFixed(2) : price})`,
+      subject: `New Order ${orderId} — ${productName} (${typeof price === 'number' ? price.toFixed(2) : price})`,
       html,
     });
     console.log(`Order notification sent for ${orderId}`);
@@ -126,7 +128,7 @@ export async function sendOrderNotification(orderDoc) {
 export async function sendOrderConfirmation(orderDoc) {
   const order = orderDoc?.toObject ? orderDoc.toObject() : orderDoc;
   const { orderId, productName, size, price, customerName, customerEmail } = order;
-  const total = typeof price === "number" ? `€${price.toFixed(2)}` : `€${price}`;
+  const total = typeof price === "number" ? `$${price.toFixed(2)}` : `$${price}`;
   const wallet = process.env.BTC_WALLET || "";
 
   const html = emailShell(
@@ -136,17 +138,17 @@ export async function sendOrderConfirmation(orderDoc) {
     <p style="color: #2b2b26; font-size: 15px; margin: 0;">Hi ${esc(customerName)},</p>
     <p style="color: #55504a; font-size: 14px; line-height: 1.6; margin: 10px 0 0;">Thanks for your order! Here is your summary — payment is by Bitcoin (BTC) only.</p>
 
-    <div style="background: #f6f1e7; border: 1px solid #e9dfcc; border-radius: 12px; padding: 16px 20px; margin-top: 18px;">
-      <p style="color: #3f6b4a; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px;">Your order</p>
+    <div style="background: #fdf4ea; border: 1px solid #f3e2cf; border-radius: 12px; padding: 16px 20px; margin-top: 18px;">
+      <p style="color: #d15f0e; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px;">Your order</p>
       <p style="color: #2b2b26; font-size: 15px; margin: 0;">${esc(productName)} — ${esc(size)}</p>
-      <p style="color: #1f3a2b; font-size: 26px; font-weight: bold; margin: 10px 0 0;">${total}</p>
+      <p style="color: #a3470d; font-size: 26px; font-weight: bold; margin: 10px 0 0;">${total}</p>
     </div>
 
-    <div style="margin-top: 20px; padding: 16px 18px; border: 1px solid #c9a24b; border-radius: 12px; background: #fffdf7;">
-      <p style="color: #1f3a2b; font-size: 13px; font-weight: bold; margin: 0 0 8px;">Payment — Bitcoin (BTC) only</p>
+    <div style="margin-top: 20px; padding: 16px 18px; border: 1px solid #ff9d2e; border-radius: 12px; background: #fffdf7;">
+      <p style="color: #a3470d; font-size: 13px; font-weight: bold; margin: 0 0 8px;">Payment — Bitcoin (BTC) only</p>
       ${wallet
         ? `<p style="color: #55504a; font-size: 13px; margin: 0 0 10px;">Send the BTC equivalent of <strong>${total}</strong> to:</p>
-           <p style="background: #f6f1e7; border: 1px solid #e9dfcc; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px; word-break: break-all; margin: 0 0 10px;">${esc(wallet)}</p>
+           <p style="background: #fdf4ea; border: 1px solid #f3e2cf; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px; word-break: break-all; margin: 0 0 10px;">${esc(wallet)}</p>
            <p style="color: #55504a; font-size: 13px; margin: 0;">After sending, reply to this email with your transaction ID so we can confirm and ship your order.</p>`
         : `<p style="color: #55504a; font-size: 13px; margin: 0;">We will reply shortly with our Bitcoin wallet address and the exact BTC amount for <strong>${total}</strong>.</p>`}
     </div>
@@ -159,7 +161,8 @@ export async function sendOrderConfirmation(orderDoc) {
     await getTransporter().sendMail({
       from: fromAddress(),
       to: customerEmail,
-      subject: `Your WeedLaps order ${orderId} — payment instructions`,
+      replyTo: businessEmail(),
+      subject: `Your CannabisLap order ${orderId} — payment instructions`,
       html,
     });
     console.log(`Order confirmation sent to ${customerEmail} for ${orderId}`);

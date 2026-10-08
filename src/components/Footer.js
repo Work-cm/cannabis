@@ -50,7 +50,7 @@ export default function Footer() {
                 <CannabisIcon className="w-7 h-7 text-gold-soft" />
               </span>
               <span className="font-display text-3xl text-cream">
-                Weed<em className="text-gold italic">Laps</em>
+                Cannabis<em className="text-gold">Lap</em>
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/65">
@@ -68,7 +68,7 @@ export default function Footer() {
                 <FaTelegramPlane className="w-4 h-4" />
               </a>
               <a
-                href="mailto:orders@weedlaps.com"
+                href="mailto:orders@cannabislap.com"
                 aria-label="Email"
                 className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:text-forest-deep hover:border-gold transition-colors"
               >
@@ -109,10 +109,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold mb-5">Say Hello</h4>
             <a
-              href="mailto:orders@weedlaps.com"
+              href="mailto:orders@cannabislap.com"
               className="group inline-flex items-center gap-1 text-sm hover:text-cream transition-colors break-all"
             >
-              orders@weedlaps.com
+              orders@cannabislap.com
               <FiArrowUpRight className="w-3.5 h-3.5 text-gold transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <p className="mt-3 text-xs text-cream/55 leading-relaxed">
@@ -123,11 +123,11 @@ export default function Footer() {
 
         {/* Big wordmark */}
         <div aria-hidden="true" className="mt-16 select-none font-display text-[18vw] md:text-[11rem] leading-none text-cream/[0.04] text-center tracking-tight">
-          weedlaps
+          cannabislap
         </div>
 
         <div className="mt-6 pt-6 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-cream/50">
-          <p>&copy; {new Date().getFullYear()} WeedLaps.com — Grown with care.</p>
+          <p>&copy; {new Date().getFullYear()} CannabisLap.com — Grown with care.</p>
           <p>For adults 18+ only. Please consume responsibly and follow your local laws.</p>
         </div>
       </div>

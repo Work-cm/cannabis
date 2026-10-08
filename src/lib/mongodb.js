@@ -13,8 +13,9 @@ if (!cached) {
 }
 
 async function dbConnect() {
-  if (!MONGODB_URI || MONGODB_URI.includes("username:password")) {
+  if (!MONGODB_URI || MONGODB_URI.includes("username:password") || /<[^>]+>/.test(MONGODB_URI)) {
     console.warn("MONGODB_URI not configured — skipping database connection.");
+    mongoose.set("bufferCommands", false);
     return null;
   }
 

@@ -48,7 +48,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <FiLoader className="w-8 h-8 text-[#4ade80] animate-spin" />
+        <FiLoader className="w-8 h-8 text-[#ff9d2e] animate-spin" />
       </div>
     );
   }
@@ -74,14 +74,14 @@ export default function AdminDashboard() {
 
       {/* Sidebar */}
       <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-gradient-to-b from-white to-gray-50 border-r border-gray-100 flex flex-col transition-transform lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-[#4ade80]/5 to-transparent">
+        <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-[#ff9d2e]/5 to-transparent">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4ade80]/20 to-[#4ade80]/5 border border-[#4ade80]/20 flex items-center justify-center">
-              <FiPackage className="w-5 h-5 text-[#4ade80]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff9d2e]/20 to-[#ff9d2e]/5 border border-[#ff9d2e]/20 flex items-center justify-center">
+              <FiPackage className="w-5 h-5 text-[#ff9d2e]" />
             </div>
             <div>
               <p className="text-sm font-bold text-gray-900">Admin Panel</p>
-              <p className="text-[10px] text-gray-600 uppercase tracking-wider">WeedLaps</p>
+              <p className="text-[10px] text-gray-600 uppercase tracking-wider">CannabisLap</p>
             </div>
           </div>
         </div>
@@ -93,19 +93,19 @@ export default function AdminDashboard() {
               onClick={() => { setTab(item.id); setSidebarOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                 tab === item.id
-                  ? "bg-gradient-to-r from-[#4ade80]/15 to-[#4ade80]/5 text-[#4ade80] border border-[#4ade80]/20"
+                  ? "bg-gradient-to-r from-[#ff9d2e]/15 to-[#ff9d2e]/5 text-[#ff9d2e] border border-[#ff9d2e]/20"
                   : "text-gray-600 hover:text-gray-600 hover:bg-white/5 hover:border hover:border-gray-200 border border-transparent"
               }`}
             >
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                tab === item.id ? "bg-[#4ade80]/20" : "bg-white"
+                tab === item.id ? "bg-[#ff9d2e]/20" : "bg-white"
               }`}>
                 {item.icon}
               </div>
               <span className="flex-1 text-left">{item.label}</span>
               {item.badge > 0 && (
                 <span className={`text-[10px] font-bold px-2 py-1 rounded-full ${
-                  tab === item.id ? "bg-[#4ade80] text-black" : "bg-[#1e1e1e] text-gray-400"
+                  tab === item.id ? "bg-[#ff9d2e] text-black" : "bg-[#1e1e1e] text-gray-400"
                 }`}>
                   {item.badge}
                 </span>
@@ -140,7 +140,7 @@ export default function AdminDashboard() {
                 <span className="text-gray-900 capitalize font-medium">{tab}</span>
               </div>
             </div>
-            <a href="/" target="_blank" className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#4ade80] hover:bg-[#4ade80]/5 px-3 py-2 rounded-xl transition-all duration-200">
+            <a href="/" target="_blank" className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#ff9d2e] hover:bg-[#ff9d2e]/5 px-3 py-2 rounded-xl transition-all duration-200">
               <FiEye className="w-3.5 h-3.5" />
               View Site
             </a>
@@ -163,7 +163,7 @@ export default function AdminDashboard() {
 /* ─── Overview Tab ─── */
 function OverviewTab({ orders, products, messages, revenue, pendingOrders, setTab }) {
   const stats = [
-    { label: "Total Orders", value: orders.length, icon: <FiShoppingCart className="w-5 h-5" />, color: "text-[#4ade80] bg-[#4ade80]/10", click: "orders" },
+    { label: "Total Orders", value: orders.length, icon: <FiShoppingCart className="w-5 h-5" />, color: "text-[#ff9d2e] bg-[#ff9d2e]/10", click: "orders" },
     { label: "Pending", value: pendingOrders, icon: <FiClock className="w-5 h-5" />, color: "text-yellow-400 bg-yellow-400/10", click: "orders" },
     { label: "Revenue", value: `$${revenue.toFixed(2)}`, icon: <FiDollarSign className="w-5 h-5" />, color: "text-green-400 bg-green-400/10" },
     { label: "Products", value: products.length, icon: <FiPackage className="w-5 h-5" />, color: "text-blue-400 bg-blue-400/10", click: "products" },
@@ -174,7 +174,7 @@ function OverviewTab({ orders, products, messages, revenue, pendingOrders, setTa
 
   return (
     <div className="space-y-8">
-      <div className="bg-gradient-to-r from-[#4ade80]/5 to-transparent rounded-2xl p-6 border border-gray-100">
+      <div className="bg-gradient-to-r from-[#ff9d2e]/5 to-transparent rounded-2xl p-6 border border-gray-100">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back</h1>
         <p className="text-sm text-gray-400">Here&apos;s what&apos;s happening with your store today.</p>
       </div>
@@ -185,9 +185,9 @@ function OverviewTab({ orders, products, messages, revenue, pendingOrders, setTa
           <button
             key={s.label}
             onClick={() => s.click && setTab(s.click)}
-            className="bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-2xl p-5 text-left hover:border-[#4ade80]/30 hover:shadow-lg hover:shadow-[#4ade80]/10 transition-all duration-300 group relative overflow-hidden"
+            className="bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-2xl p-5 text-left hover:border-[#ff9d2e]/30 hover:shadow-lg hover:shadow-[#ff9d2e]/10 transition-all duration-300 group relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#4ade80]/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#ff9d2e]/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
             <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4 relative z-10`}>
               {s.icon}
             </div>
@@ -199,9 +199,9 @@ function OverviewTab({ orders, products, messages, revenue, pendingOrders, setTa
 
       {/* Recent orders */}
       <div className="bg-gradient-to-br from-white to-gray-50 border border-gray-100 rounded-2xl overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-[#4ade80]/3 to-transparent">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-[#ff9d2e]/3 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">Recent Orders</h2>
-          <button onClick={() => setTab("orders")} className="text-xs text-[#4ade80] hover:bg-[#4ade80]/5 px-3 py-1.5 rounded-lg transition-all duration-200">View all</button>
+          <button onClick={() => setTab("orders")} className="text-xs text-[#ff9d2e] hover:bg-[#ff9d2e]/5 px-3 py-1.5 rounded-lg transition-all duration-200">View all</button>
         </div>
         {recentOrders.length === 0 ? (
           <p className="px-6 py-12 text-sm text-gray-600 text-center">No orders yet</p>
@@ -280,7 +280,7 @@ function OrdersTab({ orders, onRefresh }) {
                   </div>
                   <h3 className="text-sm font-semibold text-gray-900">{order.productName} — {order.size}</h3>
                 </div>
-                <span className="text-lg font-bold text-[#4ade80]">${order.price?.toFixed(2)}</span>
+                <span className="text-lg font-bold text-[#ff9d2e]">${order.price?.toFixed(2)}</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm mb-4 p-3 bg-gray-50 rounded-lg">
@@ -306,7 +306,7 @@ function OrdersTab({ orders, onRefresh }) {
                     disabled={order.status === s}
                     className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-all ${
                       order.status === s
-                        ? "bg-[#4ade80] text-black"
+                        ? "bg-[#ff9d2e] text-black"
                         : "bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                     }`}
                   >
@@ -400,7 +400,7 @@ function ProductsTab({ products, onRefresh }) {
     }
   };
 
-  const inputCls = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:border-transparent placeholder-gray-600";
+  const inputCls = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff9d2e] focus:border-transparent placeholder-gray-600";
 
   return (
     <div className="space-y-6">
@@ -408,7 +408,7 @@ function ProductsTab({ products, onRefresh }) {
         <h1 className="text-xl font-bold text-gray-900">Products</h1>
         <button
           onClick={() => setShowAdd(!showAdd)}
-          className="flex items-center gap-2 bg-[#4ade80] hover:bg-[#22c55e] text-black text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
+          className="flex items-center gap-2 bg-[#ff9d2e] hover:bg-[#ef6c0c] text-black text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
         >
           {showAdd ? <FiX className="w-4 h-4" /> : <FiPlus className="w-4 h-4" />}
           {showAdd ? "Cancel" : "Add Product"}
@@ -417,8 +417,8 @@ function ProductsTab({ products, onRefresh }) {
 
       {/* Add Product Form */}
       {showAdd && (
-        <div className="bg-gray-50 border border-[#4ade80]/30 rounded-xl p-6 space-y-4">
-          <h2 className="text-sm font-semibold text-[#4ade80] flex items-center gap-2">
+        <div className="bg-gray-50 border border-[#ff9d2e]/30 rounded-xl p-6 space-y-4">
+          <h2 className="text-sm font-semibold text-[#ff9d2e] flex items-center gap-2">
             <FiPlus className="w-4 h-4" /> New Product
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -436,6 +436,8 @@ function ProductsTab({ products, onRefresh }) {
                 <option value="">—</option>
                 <option value="indica">Indica</option>
                 <option value="sativa">Sativa</option>
+                <option value="etomidate">Etomidate Kpods</option>
+                <option value="preroll">Preroll</option>
                 <option value="hybrid">Hybrid</option>
               </select>
             </div>
@@ -472,7 +474,7 @@ function ProductsTab({ products, onRefresh }) {
             <label className="block text-xs text-gray-600 mb-1.5">Product Image</label>
             <ImageUploader currentImage={addForm.image} onUploaded={(url) => setAddForm({ ...addForm, image: url })} />
           </div>
-          <button onClick={handleAdd} className="flex items-center gap-2 bg-[#4ade80] hover:bg-[#22c55e] text-black text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors">
+          <button onClick={handleAdd} className="flex items-center gap-2 bg-[#ff9d2e] hover:bg-[#ef6c0c] text-black text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors">
             <FiSave className="w-4 h-4" /> Create Product
           </button>
         </div>
@@ -499,6 +501,8 @@ function ProductsTab({ products, onRefresh }) {
                       <option value="">—</option>
                       <option value="indica">Indica</option>
                       <option value="sativa">Sativa</option>
+                      <option value="etomidate">Etomidate Kpods</option>
+                      <option value="preroll">Preroll</option>
                       <option value="hybrid">Hybrid</option>
                     </select>
                   </div>
@@ -535,7 +539,7 @@ function ProductsTab({ products, onRefresh }) {
                   <ImageUploader currentImage={form.image} onUploaded={(url) => setForm({ ...form, image: url })} />
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={() => saveEdit(product.slug)} className="flex items-center gap-1.5 bg-[#4ade80] hover:bg-[#22c55e] text-black text-sm font-semibold px-5 py-2 rounded-lg transition-colors">
+                  <button onClick={() => saveEdit(product.slug)} className="flex items-center gap-1.5 bg-[#ff9d2e] hover:bg-[#ef6c0c] text-black text-sm font-semibold px-5 py-2 rounded-lg transition-colors">
                     <FiSave className="w-4 h-4" /> Save
                   </button>
                   <button onClick={() => setEditing(null)} className="flex items-center gap-1.5 bg-white hover:bg-gray-100 text-gray-600 text-sm font-medium px-5 py-2 rounded-lg transition-colors">
@@ -568,7 +572,7 @@ function ProductsTab({ products, onRefresh }) {
                     )}
                   </div>
                   <p className="text-xs text-gray-600 truncate">{product.shortDescription}</p>
-                  <p className="text-sm font-bold text-[#4ade80] mt-1">From €{product.price?.toFixed(2)}</p>
+                  <p className="text-sm font-bold text-[#ff9d2e] mt-1">From ${product.price?.toFixed(2)}</p>
                 </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
@@ -635,7 +639,7 @@ function SettingsTab({ settings, onRefresh }) {
     setSaving(false);
   };
 
-  const inputCls = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#4ade80] focus:border-transparent placeholder-gray-600";
+  const inputCls = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff9d2e] focus:border-transparent placeholder-gray-600";
 
   const fields = [
     { key: "siteName", label: "Site Name", type: "text" },
@@ -665,7 +669,7 @@ function SettingsTab({ settings, onRefresh }) {
         <button
           onClick={handleSave}
           disabled={saving}
-          className="flex items-center gap-2 bg-[#4ade80] hover:bg-[#22c55e] text-black font-semibold text-sm px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:shadow-[#4ade80]/25 disabled:opacity-50"
+          className="flex items-center gap-2 bg-[#ff9d2e] hover:bg-[#ef6c0c] text-black font-semibold text-sm px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:shadow-[#ff9d2e]/25 disabled:opacity-50"
         >
           {saving ? <FiLoader className="w-4 h-4 animate-spin" /> : <FiSave className="w-4 h-4" />}
           Save Settings
@@ -730,19 +734,19 @@ function ImageUploader({ currentImage, onUploaded }) {
         onDragLeave={() => setDragOver(false)}
         onDrop={handleDrop}
         className={`border-2 border-dashed rounded-xl p-6 text-center transition-colors cursor-pointer ${
-          dragOver ? "border-[#4ade80] bg-[#4ade80]/5" : "border-gray-200 hover:border-[#444]"
+          dragOver ? "border-[#ff9d2e] bg-[#ff9d2e]/5" : "border-gray-200 hover:border-[#444]"
         }`}
       >
         {uploading ? (
           <div className="flex flex-col items-center gap-2">
-            <FiLoader className="w-6 h-6 text-[#4ade80] animate-spin" />
+            <FiLoader className="w-6 h-6 text-[#ff9d2e] animate-spin" />
             <p className="text-xs text-gray-500">Uploading...</p>
           </div>
         ) : (
           <label className="flex flex-col items-center gap-2 cursor-pointer">
             <FiUpload className="w-6 h-6 text-gray-600" />
             <p className="text-xs text-gray-500">
-              <span className="text-[#4ade80] font-medium">Click to upload</span> or drag & drop
+              <span className="text-[#ff9d2e] font-medium">Click to upload</span> or drag & drop
             </p>
             <p className="text-[10px] text-gray-600">JPG, PNG, WebP, GIF, SVG · Max 5MB</p>
             <input type="file" accept="image/*" onChange={handleFileChange} className="hidden" />

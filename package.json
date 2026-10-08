@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "node scripts/seed.mjs"
+    "seed": "node scripts/seed.mjs",
+    "seed:indica": "node scripts/seed-strain.mjs indica",
+    "seed:sativa": "node scripts/seed-strain.mjs sativa",
+    "seed:hybrid": "node scripts/seed-strain.mjs hybrid",
+    "seed:preroll": "node scripts/seed-strain.mjs preroll",
+    "seed:etomidate": "node scripts/seed-strain.mjs etomidate"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
