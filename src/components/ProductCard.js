@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiShoppingBag } from "react-icons/fi";
 import ProtectedImage from "@/components/ProtectedImage";
 import { STRAINS, CategoryIcon, normalizeStrain, startingPrice } from "@/lib/categories";
 
@@ -12,10 +12,8 @@ export default function ProductCard({ product, compact = false }) {
   const badge = STRAINS[strain]?.label || "Flower";
 
   return (
-    <Link
-      href={`/shop/${product.slug}`}
-      className="product-card group block rounded-[28px] bg-paper border border-sand p-3 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(163,71,13,0.4)] hover:border-gold/50"
-    >
+    <div className="product-card group rounded-[28px] bg-paper border border-sand p-3 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(163,71,13,0.4)] hover:border-gold/50">
+      <Link href={`/shop/${product.slug}`} className="block">
       {/* Image */}
       <div
         className={`relative overflow-hidden rounded-[22px] ${tint} ${compact ? "aspect-square" : "aspect-[4/5]"} image-container no-context-menu`}
@@ -53,14 +51,18 @@ export default function ProductCard({ product, compact = false }) {
       </div>
 
       {/* Body */}
-      <div className="px-2 pt-4 pb-2">
+      <div className="px-2 pt-4">
         <h3 className="font-display text-xl leading-snug text-forest line-clamp-1 group-hover:text-moss transition-colors">
           {product.name}
         </h3>
         {!compact && product.shortDescription && (
           <p className="mt-1.5 text-sm text-bark/70 leading-relaxed line-clamp-2">{product.shortDescription}</p>
         )}
-        <div className="mt-4 flex items-end justify-between">
+      </div>
+      </Link>
+
+      <div className="px-2 pt-4 pb-2">
+        <div className="flex items-end justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-bark/50">{multi ? "From" : "Price"}</p>
             <p className="font-display text-2xl text-forest">${from.toFixed(2)}</p>
@@ -71,8 +73,22 @@ export default function ProductCard({ product, compact = false }) {
             </span>
           )}
         </div>
+
+        {product.inStock ? (
+          <Link
+            href={`/order/${product.slug}`}
+            className="mt-4 flex items-center justify-center gap-2 rounded-full bg-forest py-3 text-sm font-semibold text-cream transition-colors hover:bg-moss"
+          >
+            <FiShoppingBag className="w-4 h-4" />
+            Order Now
+          </Link>
+        ) : (
+          <span className="mt-4 flex items-center justify-center gap-2 rounded-full bg-sand py-3 text-sm font-semibold text-bark/50">
+            Sold out
+          </span>
+        )}
       </div>
-    </Link>
+    </div>
   );
 }
 

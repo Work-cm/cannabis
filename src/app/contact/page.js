@@ -84,7 +84,7 @@ export default function ContactPage() {
     { q: "How long does shipping take?", a: "Every order is packed promptly and sent with tracking. Delivery times depend on your destination — you'll get a tracking number as soon as it ships." },
     { q: "Do you offer bulk pricing?", a: "Yes! Contact us with your requirements and we'll provide a custom quote for large orders." },
     { q: "Is shipping discreet?", a: "Absolutely. All packages are shipped in plain, unmarked packaging with no product references." },
-    { q: "What payment methods do you accept?", a: "We accept Bitcoin (BTC) only. After you place an order we email you our wallet address and the exact amount to send." },
+    { q: "What payment methods do you accept?", a: "We accept Bitcoin (BTC), Cash App, Zelle and Apple Pay. Choose your preferred method at checkout — after you place an order we email you the payment details." },
   ];
 
   const inputCls =

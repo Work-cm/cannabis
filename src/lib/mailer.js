@@ -84,9 +84,11 @@ export async function sendContactNotification({ name, email, phone, subject, mes
   }
 }
 
+export const PAYMENT_LABELS = { bitcoin: "Bitcoin (BTC)", cashapp: "Cash App", zelle: "Zelle", applepay: "Apple Pay" };
+
 export async function sendOrderNotification(orderDoc) {
   const order = orderDoc?.toObject ? orderDoc.toObject() : orderDoc;
-  const { orderId, productName, size, price, customerName, customerEmail, customerPhone, shippingAddress, message } = order;
+  const { orderId, productName, size, price, customerName, customerEmail, customerPhone, shippingAddress, message, paymentMethod } = order;
   const total = typeof price === "number" ? `$${price.toFixed(2)}` : `$${price}`;
 
   const html = emailShell(
@@ -102,9 +104,10 @@ export async function sendOrderNotification(orderDoc) {
     ${field("Email", esc(customerEmail))}
     ${customerPhone ? field("Phone / WhatsApp", esc(customerPhone)) : ""}
     ${field("Shipping address", esc(shippingAddress))}
+    ${field("Payment method", esc(PAYMENT_LABELS[paymentMethod] || "Bitcoin (BTC)"))}
     ${message ? field("Customer note", `<span style="white-space: pre-wrap;">${esc(message)}</span>`) : ""}
     <div style="margin-top: 24px; padding: 14px 18px; background: #fdf4ea; border-left: 3px solid #ff9d2e; border-radius: 8px;">
-      <p style="margin: 0; color: #7c5230; font-size: 12px;">Reply directly to this email to reach the customer. Payment is Bitcoin (BTC) only.</p>
+      <p style="margin: 0; color: #7c5230; font-size: 12px;">Reply directly to this email to reach the customer with their ${esc(PAYMENT_LABELS[paymentMethod] || "Bitcoin (BTC)")} payment details.</p>
     </div>
     `
   );
@@ -127,16 +130,17 @@ export async function sendOrderNotification(orderDoc) {
 // Confirmation email to the customer — includes BTC payment instructions.
 export async function sendOrderConfirmation(orderDoc) {
   const order = orderDoc?.toObject ? orderDoc.toObject() : orderDoc;
-  const { orderId, productName, size, price, customerName, customerEmail } = order;
+  const { orderId, productName, size, price, customerName, customerEmail, paymentMethod } = order;
   const total = typeof price === "number" ? `$${price.toFixed(2)}` : `$${price}`;
   const wallet = process.env.BTC_WALLET || "";
+  const methodLabel = PAYMENT_LABELS[paymentMethod] || "Bitcoin (BTC)";
 
   const html = emailShell(
     "Order confirmed",
     `${orderId} — thank you for your order`,
     `
     <p style="color: #2b2b26; font-size: 15px; margin: 0;">Hi ${esc(customerName)},</p>
-    <p style="color: #55504a; font-size: 14px; line-height: 1.6; margin: 10px 0 0;">Thanks for your order! Here is your summary — payment is by Bitcoin (BTC) only.</p>
+    <p style="color: #55504a; font-size: 14px; line-height: 1.6; margin: 10px 0 0;">Thanks for your order! Here is your summary — your chosen payment method is <strong>${esc(methodLabel)}</strong>.</p>
 
     <div style="background: #fdf4ea; border: 1px solid #f3e2cf; border-radius: 12px; padding: 16px 20px; margin-top: 18px;">
       <p style="color: #d15f0e; font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px;">Your order</p>
@@ -145,12 +149,12 @@ export async function sendOrderConfirmation(orderDoc) {
     </div>
 
     <div style="margin-top: 20px; padding: 16px 18px; border: 1px solid #ff9d2e; border-radius: 12px; background: #fffdf7;">
-      <p style="color: #a3470d; font-size: 13px; font-weight: bold; margin: 0 0 8px;">Payment — Bitcoin (BTC) only</p>
-      ${wallet
+      <p style="color: #a3470d; font-size: 13px; font-weight: bold; margin: 0 0 8px;">Payment — ${esc(methodLabel)}</p>
+      ${paymentMethod === "bitcoin" && wallet
         ? `<p style="color: #55504a; font-size: 13px; margin: 0 0 10px;">Send the BTC equivalent of <strong>${total}</strong> to:</p>
            <p style="background: #fdf4ea; border: 1px solid #f3e2cf; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px; word-break: break-all; margin: 0 0 10px;">${esc(wallet)}</p>
            <p style="color: #55504a; font-size: 13px; margin: 0;">After sending, reply to this email with your transaction ID so we can confirm and ship your order.</p>`
-        : `<p style="color: #55504a; font-size: 13px; margin: 0;">We will reply shortly with our Bitcoin wallet address and the exact BTC amount for <strong>${total}</strong>.</p>`}
+        : `<p style="color: #55504a; font-size: 13px; margin: 0;">We will reply shortly with the ${esc(methodLabel)} payment details for <strong>${total}</strong>. We also accept Bitcoin, Cash App, Zelle and Apple Pay — just let us know if you'd like to switch.</p>`}
     </div>
 
     <p style="color: #55504a; font-size: 13px; margin: 22px 0 0;">Questions? Reply to this email or message us on Telegram <strong>+1 (910) 227-9379</strong>.</p>

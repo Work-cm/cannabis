@@ -12,6 +12,11 @@ const OrderSchema = new mongoose.Schema(
     customerPhone: { type: String, default: "" },
     shippingAddress: { type: String, required: true },
     message: { type: String, default: "" },
+    paymentMethod: {
+      type: String,
+      enum: ["bitcoin", "cashapp", "zelle", "applepay"],
+      default: "bitcoin",
+    },
     status: {
       type: String,
       enum: ["pending", "confirmed", "shipped", "delivered"],

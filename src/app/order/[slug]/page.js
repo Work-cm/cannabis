@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import CannabisIcon from "@/components/CannabisIcon";
 import { CATEGORIES, CategoryIcon, categoryLabel } from "@/lib/categories";
-import { FiCheck, FiUser, FiMail, FiPhone, FiMapPin, FiMessageSquare, FiShoppingBag, FiChevronRight, FiLoader, FiArrowLeft, FiPackage, FiShield, FiTruck, FiLock } from "react-icons/fi";
-import { FaBitcoin, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FiCheck, FiUser, FiMail, FiPhone, FiMapPin, FiMessageSquare, FiShoppingBag, FiChevronRight, FiLoader, FiArrowLeft, FiPackage, FiShield, FiTruck, FiLock, FiDollarSign } from "react-icons/fi";
+import { FaBitcoin, FaTelegramPlane, FaWhatsapp, FaApplePay } from "react-icons/fa";
+import { SiCashapp } from "react-icons/si";
 
 const inputCls =
   "w-full bg-cream border border-sand text-ink rounded-2xl pl-11 pr-4 py-3.5 text-sm transition-colors placeholder:text-bark/40 focus:outline-none focus:border-moss focus:bg-paper focus:ring-4 focus:ring-moss/10";
@@ -17,6 +18,13 @@ const iconCls = "absolute left-4 top-4 w-4 h-4 text-bark/40";
 // WhatsApp business number and Telegram contact (digits only for wa.me)
 const WHATSAPP_NUMBER = "14794800596";
 const TELEGRAM_URL = "https://t.me/+19102279379";
+
+const PAYMENT_METHODS = [
+  { id: "bitcoin", icon: FaBitcoin, title: "Bitcoin", desc: "BTC — wallet in email" },
+  { id: "cashapp", icon: SiCashapp, title: "Cash App", desc: "$cashtag payment" },
+  { id: "zelle", icon: FiDollarSign, title: "Zelle", desc: "Bank transfer" },
+  { id: "applepay", icon: FaApplePay, title: "Apple Pay", desc: "One-tap payment" },
+];
 
 export default function OrderPage() {
   const { slug } = useParams();
@@ -28,6 +36,7 @@ export default function OrderPage() {
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", address: "", message: "" });
   const [method, setMethod] = useState("form");
+  const [paymentMethod, setPaymentMethod] = useState("bitcoin");
 
   useEffect(() => {
     fetch("/api/products")
@@ -90,6 +99,7 @@ export default function OrderPage() {
           customerPhone: form.phone,
           shippingAddress: form.address,
           message: form.message,
+          paymentMethod,
         }),
       });
       if (res.ok) {
@@ -150,7 +160,7 @@ export default function OrderPage() {
               </span>{" "}
               is in. We'll email{" "}
               <span className="font-semibold text-forest">{form.email}</span>{" "}
-              our Bitcoin wallet address and the exact BTC amount to complete your order.
+              the payment details to complete your order.
             </p>
             <Link
               href="/shop"
@@ -232,10 +242,10 @@ export default function OrderPage() {
                     <p className="mt-2 font-display text-xl text-forest">
                       {product.name} — {product.sizes?.[selectedSize]?.label || "Standard"}
                     </p>
-                    <p className="mt-1 text-sm font-semibold text-moss">${currentPrice.toFixed(2)} · Bitcoin (BTC) only</p>
+                    <p className="mt-1 text-sm font-semibold text-moss">${currentPrice.toFixed(2)} · BTC · Cash App · Zelle · Apple Pay</p>
                   </div>
                   <p className="text-sm text-bark/70 leading-relaxed">
-                    Send us a message on {chatChannel.name} with this product, your chosen amount and your delivery address — we'll confirm your order and send the Bitcoin payment details right away.
+                    Send us a message on {chatChannel.name} with this product, your chosen amount and your delivery address — we'll confirm your order and send the payment details right away.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
@@ -344,6 +354,26 @@ export default function OrderPage() {
                 </div>
               </div>
 
+              <div className="mt-8">
+                <p className={labelCls}>Payment method</p>
+                <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-2.5">
+                  {PAYMENT_METHODS.map((pm) => (
+                    <button
+                      key={pm.id}
+                      type="button"
+                      onClick={() => setPaymentMethod(pm.id)}
+                      className={`rounded-2xl border px-3 py-3 text-left transition-all ${
+                        paymentMethod === pm.id ? "border-forest bg-forest text-cream" : "border-sand bg-cream text-forest hover:border-forest/40"
+                      }`}
+                    >
+                      <pm.icon className={`w-5 h-5 ${paymentMethod === pm.id ? "text-gold-soft" : "text-moss"}`} />
+                      <span className="mt-1.5 block font-semibold text-sm">{pm.title}</span>
+                      <span className={`block text-[10px] mt-0.5 ${paymentMethod === pm.id ? "text-cream/70" : "text-bark/60"}`}>{pm.desc}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <button
                 type="submit"
                 disabled={submitting}
@@ -355,8 +385,8 @@ export default function OrderPage() {
               <div className="mt-5 flex items-start gap-3 rounded-2xl border border-gold/40 bg-gold-soft/20 px-4 py-3.5 text-left">
                 <FaBitcoin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <p className="text-xs leading-relaxed text-bark/80">
-                  <span className="font-semibold text-forest">Bitcoin (BTC) only.</span>{" "}
-                  We accept Bitcoin as our sole payment method. After you place your order, we'll email you the wallet address and exact BTC amount.
+                  <span className="font-semibold text-forest">Payment.</span>{" "}
+                  We accept Bitcoin, Cash App, Zelle and Apple Pay. After you place your order, we'll email you the payment details for your chosen method.
                 </p>
               </div>
               </form>

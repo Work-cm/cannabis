@@ -10,7 +10,7 @@ export async function POST(request) {
   try {
     await dbConnect();
     const body = await request.json();
-    const { productId, productName, size, price, customerName, customerEmail, customerPhone, shippingAddress, message } = body;
+    const { productId, productName, size, price, customerName, customerEmail, customerPhone, shippingAddress, message, paymentMethod } = body;
 
     if (!productId || !customerName || !customerEmail || !shippingAddress) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -27,6 +27,7 @@ export async function POST(request) {
       customerPhone: customerPhone || "",
       shippingAddress,
       message: message || "",
+      paymentMethod: ["bitcoin", "cashapp", "zelle", "applepay"].includes(paymentMethod) ? paymentMethod : "bitcoin",
       status: "pending",
     });
 
