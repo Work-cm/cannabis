@@ -1,16 +1,9 @@
 "use client";
 import { useState } from "react";
 import { FiMessageCircle, FiMail, FiX } from "react-icons/fi";
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const links = [
-  {
-    label: "Telegram",
-    href: "https://t.me/+19102279379",
-    icon: <FaTelegramPlane className="w-5 h-5" />,
-    bg: "bg-moss text-cream",
-    hover: "hover:bg-forest",
-  },
   {
     label: "WhatsApp",
     href: "https://wa.me/14794800596",

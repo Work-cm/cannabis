@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { FiMail, FiPhone, FiTruck, FiClock, FiUser, FiSend, FiMessageSquare, FiLoader, FiCheckCircle, FiMapPin, FiArrowRight, FiHeadphones, FiPaperclip, FiCalendar, FiGlobe } from "react-icons/fi";
 import { BsShieldCheck, BsLightningCharge } from "react-icons/bs";
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import CannabisIcon from "@/components/CannabisIcon";
 
 export default function ContactPage() {
@@ -63,13 +63,6 @@ export default function ContactPage() {
       value: siteSettings.contactEmail || "orders@cannabislap.com",
       desc: "Replies within 2 hours",
       href: `mailto:${siteSettings.contactEmail || "orders@cannabislap.com"}`,
-    },
-    {
-      icon: <FaTelegramPlane className="w-5 h-5" />,
-      label: "Telegram",
-      value: "+1 (910) 227-9379",
-      desc: "Fastest way to reach us",
-      href: "https://t.me/+19102279379",
     },
     {
       icon: <FaWhatsapp className="w-5 h-5" />,

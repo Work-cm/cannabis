@@ -157,7 +157,7 @@ export async function sendOrderConfirmation(orderDoc) {
         : `<p style="color: #55504a; font-size: 13px; margin: 0;">We will reply shortly with the ${esc(methodLabel)} payment details for <strong>${total}</strong>. We also accept Bitcoin, Cash App, Zelle and Apple Pay — just let us know if you'd like to switch.</p>`}
     </div>
 
-    <p style="color: #55504a; font-size: 13px; margin: 22px 0 0;">Questions? Reply to this email or message us on Telegram <strong>+1 (910) 227-9379</strong>.</p>
+    <p style="color: #55504a; font-size: 13px; margin: 22px 0 0;">Questions? Reply to this email or message us on WhatsApp <strong>+1 (479) 480-0596</strong>.</p>
     `
   );
 
