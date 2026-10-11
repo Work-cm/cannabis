@@ -21,7 +21,7 @@ const WHATSAPP_NUMBER = "14794800596";
 const PAYMENT_METHODS = [
   { id: "bitcoin", icon: FaBitcoin, title: "Bitcoin", desc: "BTC — wallet in email" },
   { id: "cashapp", icon: SiCashapp, title: "Cash App", desc: "$cashtag payment" },
-  { id: "zelle", icon: FiDollarSign, title: "Zelle", desc: "Bank transfer" },
+  { id: "zelle", icon: FiDollarSign, title: "Zelle", desc: "" },
   { id: "applepay", icon: FaApplePay, title: "Apple Pay", desc: "One-tap payment" },
 ];
 
@@ -363,7 +363,7 @@ export default function OrderPage() {
                     >
                       <pm.icon className={`w-5 h-5 ${paymentMethod === pm.id ? "text-gold-soft" : "text-moss"}`} />
                       <span className="mt-1.5 block font-semibold text-sm">{pm.title}</span>
-                      <span className={`block text-[10px] mt-0.5 ${paymentMethod === pm.id ? "text-cream/70" : "text-bark/60"}`}>{pm.desc}</span>
+                      {pm.desc && <span className={`block text-[10px] mt-0.5 ${paymentMethod === pm.id ? "text-cream/70" : "text-bark/60"}`}>{pm.desc}</span>}
                     </button>
                   ))}
                 </div>
