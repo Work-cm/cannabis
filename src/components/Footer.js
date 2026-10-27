@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FiMail, FiTruck, FiArrowUpRight, FiShield, FiPackage } from "react-icons/fi";
+import { FaTelegramPlane } from "react-icons/fa";
 import CannabisIcon from "@/components/CannabisIcon";
 
 const shopLinks = [
@@ -57,6 +58,15 @@ export default function Footer() {
               love and shipped discreetly to your door.
             </p>
             <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://t.me/Cannabislap"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:text-forest-deep hover:border-gold transition-colors"
+              >
+                <FaTelegramPlane className="w-4 h-4" />
+              </a>
               <a
                 href="mailto:orders@cannabislap.com"
                 aria-label="Email"

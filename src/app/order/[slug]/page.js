@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import CannabisIcon from "@/components/CannabisIcon";
 import { CATEGORIES, CategoryIcon, categoryLabel } from "@/lib/categories";
 import { FiCheck, FiUser, FiMail, FiPhone, FiMapPin, FiMessageSquare, FiShoppingBag, FiChevronRight, FiLoader, FiArrowLeft, FiPackage, FiShield, FiTruck, FiLock, FiDollarSign } from "react-icons/fi";
-import { FaBitcoin, FaWhatsapp, FaApplePay } from "react-icons/fa";
+import { FaBitcoin, FaTelegramPlane, FaWhatsapp, FaApplePay } from "react-icons/fa";
 import { SiCashapp } from "react-icons/si";
 
 const inputCls =
@@ -15,8 +15,9 @@ const inputCls =
 const labelCls = "block text-[11px] font-semibold text-bark/70 uppercase tracking-[0.18em] mb-2";
 const iconCls = "absolute left-4 top-4 w-4 h-4 text-bark/40";
 
-// WhatsApp business number (digits only for wa.me)
-const WHATSAPP_NUMBER = "14794800596";
+// WhatsApp business number (digits only for wa.me) and Telegram handle
+const WHATSAPP_NUMBER = "15737231270";
+const TELEGRAM_URL = "https://t.me/Cannabislap";
 
 const PAYMENT_METHODS = [
   { id: "bitcoin", icon: FaBitcoin, title: "Bitcoin", desc: "BTC — wallet in email" },
@@ -118,7 +119,10 @@ export default function OrderPage() {
 
   const orderText = `Hi! I'd like to order:\n\n${product.name} — ${product.sizes?.[selectedSize]?.label || "Standard"}\nTotal: $${currentPrice.toFixed(2)}\n\nName:\nDelivery address:`;
 
-  const chatChannel = { name: "WhatsApp", Icon: FaWhatsapp, href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderText)}` };
+  const chatChannel =
+    method === "telegram"
+      ? { name: "Telegram", Icon: FaTelegramPlane, href: TELEGRAM_URL }
+      : { name: "WhatsApp", Icon: FaWhatsapp, href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderText)}` };
 
   const copyOrder = async () => {
     try {
@@ -210,9 +214,10 @@ export default function OrderPage() {
           <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="rounded-[32px] bg-paper border border-sand p-6 md:p-10">
               <p className={labelCls}>How would you like to order?</p>
-              <div className="mt-3 grid grid-cols-2 gap-2.5">
+              <div className="mt-3 grid grid-cols-3 gap-2.5">
                 {[
                   { id: "form", icon: FiMail, title: "Order form", desc: "We email payment info" },
+                  { id: "telegram", icon: FaTelegramPlane, title: "Telegram", desc: "@Cannabislap" },
                   { id: "whatsapp", icon: FaWhatsapp, title: "WhatsApp", desc: "Chat & order" },
                 ].map((m) => (
                   <button

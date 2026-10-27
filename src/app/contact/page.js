@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
 import { FiMail, FiPhone, FiTruck, FiClock, FiUser, FiSend, FiMessageSquare, FiLoader, FiCheckCircle, FiMapPin, FiArrowRight, FiHeadphones, FiPaperclip, FiCalendar, FiGlobe } from "react-icons/fi";
 import { BsShieldCheck, BsLightningCharge } from "react-icons/bs";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import CannabisIcon from "@/components/CannabisIcon";
 
 export default function ContactPage() {
@@ -67,9 +67,16 @@ export default function ContactPage() {
     {
       icon: <FaWhatsapp className="w-5 h-5" />,
       label: "WhatsApp",
-      value: "+1 (479) 480-0596",
+      value: "+1 (573) 723-1270",
       desc: "Chat with us directly",
-      href: "https://wa.me/14794800596",
+      href: "https://wa.me/15737231270",
+    },
+    {
+      icon: <FaTelegramPlane className="w-5 h-5" />,
+      label: "Telegram",
+      value: "@Cannabislap",
+      desc: "Message us on Telegram",
+      href: "https://t.me/Cannabislap",
     },
   ];
 

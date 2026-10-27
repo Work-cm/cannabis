@@ -1,15 +1,22 @@
 "use client";
 import { useState } from "react";
 import { FiMessageCircle, FiMail, FiX } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 
 const links = [
   {
     label: "WhatsApp",
-    href: "https://wa.me/14794800596",
+    href: "https://wa.me/15737231270",
     icon: <FaWhatsapp className="w-5 h-5" />,
     bg: "bg-forest text-cream",
     hover: "hover:bg-moss",
+  },
+  {
+    label: "Telegram",
+    href: "https://t.me/Cannabislap",
+    icon: <FaTelegramPlane className="w-5 h-5" />,
+    bg: "bg-moss text-cream",
+    hover: "hover:bg-forest",
   },
   {
     label: "Email",
